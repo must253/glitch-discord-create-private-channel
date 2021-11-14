@@ -40,16 +40,9 @@ client.on("voiceStateUpdate", async (oldState, newState) => {
   
   
   if(oldState.guild.channels.cache.get(kanal.id).members.size <= 0){
-   const embed = new Discord.MessageEmbed()
-  .setAuthor(`${oldState.member.nickname} (${oldState.member.id})`)
-  .setColor('RANDOM')
-  .setThumbnail(oldState.avatarURL)
-  .setDescription(`<@${oldState.member.id}>, Kullanıcının odası kapatıldı 👍`)
-
 
   oldState.guild.channels.cache.get(kanal.id).delete()
      
-  client.channels.cache.get(publicsesegircikyapincalogtutulcakkanal).send(embed)
   
   }
 })
