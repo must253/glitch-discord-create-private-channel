@@ -1,4 +1,4 @@
-lient.on("voiceStateUpdate", async (oldState, newState) => {
+client.on("voiceStateUpdate", async (oldState, newState) => {
   
   const publicsesegircikyapincalogtutulcakkanal = "909547766114558033"
 
