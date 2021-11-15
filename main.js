@@ -1,3 +1,4 @@
+
 client.on("voiceStateUpdate", async (oldState, newState) => {
   
   const publicsesegircikyapincalogtutulcakkanal = "909547766114558033"
@@ -5,6 +6,8 @@ client.on("voiceStateUpdate", async (oldState, newState) => {
  const mustkanal = "909544229552930826"
       let mustchannel = oldState.guild.channels.cache.get(mustkanal);
  
+  if(newState.member.user.bot) return;
+  if(oldState.member.user.bot) return;
   
   if ((oldState.channelID && !newState.channelID) || (oldState.channelID && newState.channelID && oldState.channelID === newState.channelID)) return;
   
@@ -40,6 +43,7 @@ client.on("voiceStateUpdate", async (oldState, newState) => {
   
   
   if(oldState.guild.channels.cache.get(kanal.id).members.size <= 0){
+
 
   oldState.guild.channels.cache.get(kanal.id).delete()
      
